@@ -17,40 +17,44 @@ except mysql.connector.Error as err:
     print(err)
     conn.close()
 
+# data for index.html
 select_grads = """SELECT * FROM recent_grads"""
 cursor = conn.cursor(dictionary=True)
 cursor.execute(select_grads)
 result = cursor.fetchall()
 p = []
 p.append("Major, P25, Median, P75")
-
 for row in result:
     p.append(row["Major"]  + ", " + str(row["P25th"])  + ", " + str(row["Median"])  + ", " + str(row["P75th"]))
-    #print(row["Major"])
-    #p.append(row["P25th"])
-    #print(row["P25th"])
-    #p.append(row["Median"])
-    #print(row["Median"])
-    #p.append(row["P75th"])
-    #print(row["P75th"])
     
-print(p)
+# data for hpay.html
+select_popular = """SELECT * FROM recent_grads ORDER BY Median"""
+cursor.execute(select_popular)
+result = cursor.fetchall()
+r = []
+for row in result:
+    r.append(row["Major"]  + ", " + str(row["P25th"])  + ", " + str(row["Median"])  + ", " + str(row["P75th"]))
 
-  
+# data for popular.html
+selct_popular = """SELECT * FROM recent_grads ORDER BY Total"""
+cursor.execute(select_popular)
+result = cursor.fetchall()
+x = []
+for row in result:
+    x.append(row["Major"]  + ", " + str(row["P25th"])  + ", " + str(row["Median"])  + ", " + str(row["P75th"]))
 
 
-mdata = p
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', {"list": p})
 
 def ctool(request):
     return render(request, 'ctool.html')
 
 def hpay(request):
-    return render(request, 'hpay.html', {"list": mdata})
+    return render(request, 'hpay.html', {"list": r})
 
 def popular(request):
-    return render(request, 'popular.html')
+    return render(request, 'popular.html', {"list": x})
 
 if(conn.is_connected()):
      cursor.close()
