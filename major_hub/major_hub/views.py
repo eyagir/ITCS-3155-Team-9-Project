@@ -1,6 +1,10 @@
 from django.shortcuts import render
 import webbrowser
 from django import template
+import pandas as pd
+import plotly.graph_objs as go
+import plotly.offline as pyo
+from major_hub.templates.SelectedMajorGraph.MajorInfoGraph import major_change
 
 
 
@@ -17,5 +21,7 @@ def popular(request):
     return render(request, 'popular.html')
 
 def major(request):
+    major = request.POST['majordropdown']
+    major_change(major)
     return render(request, 'major.html')
 
