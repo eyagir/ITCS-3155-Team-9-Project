@@ -4,8 +4,8 @@ from django import template
 import pandas as pd
 import plotly.graph_objs as go
 import plotly.offline as pyo
-from major_hub.templates.SelectedMajorGraph.MajorEconomicGraph import major_change
-from major_hub.templates.SelectedMajorGraph.MajorWorkGraph import major_change
+from major_hub.templates.SelectedMajorGraph.MajorEconomicGraph import major_economic_change
+from major_hub.templates.SelectedMajorGraph.MajorWorkGraph import major_work_change
 
 
 
@@ -23,6 +23,7 @@ def popular(request):
 
 def major(request):
     major = request.POST.get('majordropdown', "ACCOUNTING")
-    major_change(major)
+    major_economic_change(major)
+    major_work_change(major)
     return render(request, 'major.html')
 

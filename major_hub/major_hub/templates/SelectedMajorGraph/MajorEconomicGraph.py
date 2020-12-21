@@ -3,7 +3,7 @@ import plotly.graph_objs as go
 import plotly.offline as pyo
 
 
-def major_change(major):
+def major_economic_change(major):
     # Load CSV file from Datasets folder
     df = pd.read_csv('major_hub/templates/Datasets/MajorData.csv', index_col="Major")
 
