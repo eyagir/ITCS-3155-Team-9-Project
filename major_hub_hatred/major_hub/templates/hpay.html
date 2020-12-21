@@ -1,0 +1,51 @@
+{% extends "base.html"%}
+
+{% block title %}Major Hub{% endblock %}
+
+{% block content %}
+<h1>
+    Highest Pay
+</h1>
+<label for="pay">Graph by:</label>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".graph").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".graph").hide();
+            }
+        });
+    }).change();
+});
+</script>
+
+<!-- name="paydropdown" id="paydropdown" -->
+<div>
+    <select>
+        <option value="Median">Median</option>
+        <option value="25thPerecentile">25th Perecentile</option>
+        <option value="75thPerecentile">75th Perecentile</option>
+    </select>
+</div>
+<div class="Median graph">
+    {% include "HighestPayGraphs/HighestPayMedian.html" %}
+</div>
+<div class="25thPerecentile graph">
+    {% include "HighestPayGraphs/HighestPay25.html" %}
+</div>
+<div class="75thPerecentile graph">
+    {% include "HighestPayGraphs/HighestPay75.html" %}
+</div>
+<!-- <ul>
+    {% for row in list %}
+        <li>{{ row }}</li>
+    {% endfor %}
+</ul> -->
+{% endblock %}

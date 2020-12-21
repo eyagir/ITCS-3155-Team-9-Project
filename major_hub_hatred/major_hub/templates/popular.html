@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+
+{% block title %}Major Hub{% endblock %}
+
+{% block content %}
+<h1>
+   Popular
+</h1>
+<div class="Most Popular">
+    {% include "MostPopularGraphs/MostPopular.html" %}
+</div>
+<!-- <ul>
+    {% for row in list %}
+        <li>{{ row }}</li>
+    {% endfor %}
+</ul> -->
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+
+{% block title %}Major Hub{% endblock %}
+
+{% block content %}
+<h2>
+    Home
+</h2>
+<div class="HighestPayMedian">
+    {% include "HomePageGraphs/MajorIndex.html" %}
+</div>
+<!-- <ul>
+    {% for row in list %}
+        <li>{{ row }}</li>
+    {% endfor %}
+</ul> -->
+{% endblock %}
