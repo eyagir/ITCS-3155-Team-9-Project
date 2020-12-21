@@ -18,11 +18,11 @@ def major_change(major):
 
     xLabels = ['Employed', 'Full Time', 'Part Time', 'Full Time (Year Round)', 'Unemployed']
 
-    employed = np_df[careerIndex][9]
-    fullTime = np_df[careerIndex][10]
-    partTime = np_df[careerIndex][11]
-    fullTimeYR = np_df[careerIndex][12]
-    unemployed = np_df[careerIndex][13]
+    employed = np_df[careerIndex][8]
+    fullTime = np_df[careerIndex][9]
+    partTime = np_df[careerIndex][10]
+    fullTimeYR = np_df[careerIndex][11]
+    unemployed = np_df[careerIndex][12]
 
     yValues = [employed, fullTime, partTime, fullTimeYR, unemployed]
 

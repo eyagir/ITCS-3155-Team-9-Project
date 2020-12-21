@@ -1,18 +1,133 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+    }
+    
+    /* Style the header */
+    .header {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .header span {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px ;
+      text-decoration: none;
+    }
+    
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    /* Create three unequal columns that floats next to each other */
+    .column {
+      float: left;
+      padding: 10px;
+    }
+    
+    /* Left and right column */
+    .column.side {
+      width: 25%;
+    }
+    
+    /* Middle column */
+    .column.middle {
+      width: 50%;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column.side, .column.middle {
+        width: 100%;
+      }
+    }
+    
+    /* Style the footer */
+    .footer {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+      color: white;
+
+    }
+    </style>
+
+
 <html>
     <head>
         <meta charset="utf-8">
         <title>Major Hub</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     </head>
 
     <body>
-    {% include 'title.html' %}
-    {% include 'navbar.html'%}
-        <main>
+        <div class="header">
+            <span>Major Hub</span>
+        </div>
+
+        <div class="topnav">
+            {% url 'index' as index_url %}
+            <span>{% if request.path == index %}Home{% else %}<a href="{% url 'index' %}">Home</a>{% endif %}</span>
+        
+            {% url 'hpay' as hpay_url %}
+            <span>{% if request.path == hpay %}Home{% else %}<a href="{% url 'hpay' %}">Highest Paying</a>{% endif %}</span>
+        
+            {% url 'popular' as popular_url %}
+            <span>{% if request.path == popular %}Home{% else %}<a href="{% url 'popular' %}">Most Popular</a>{% endif %}</span>
+        
+            {% url 'contact' as ctool_url %}
+            <span ctool>{% if request.path == ctool %}Home{% else %}<a href="{% url 'ctool' %}">Comparison Tool</a>{% endif %}</span>
+        
+            {% url 'major' as major_url %}
+            <span ctool>{% if request.path == major %}Home{% else %}<a href="{% url 'major' %}">Major</a>{% endif %}</span>
+        
+
+        </div>
+    <!-- {% include 'title.html' %}
+    {% include 'navbar.html'%} -->
+        <div class="row">
             {% block content %}
             {% endblock %}
-        </main>
+        </div>
+
+        <div class="footer">
+            <p>NobleNine</p>
+        </div>          
     </body>
 </html>
