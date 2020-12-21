@@ -4,7 +4,8 @@ from django import template
 import pandas as pd
 import plotly.graph_objs as go
 import plotly.offline as pyo
-from major_hub.templates.SelectedMajorGraph.MajorInfoGraph import major_change
+from major_hub.templates.SelectedMajorGraph.MajorEconomicGraph import major_change
+from major_hub.templates.SelectedMajorGraph.MajorWorkGraph import major_change
 
 
 
