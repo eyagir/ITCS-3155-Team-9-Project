@@ -16,3 +16,6 @@ def hpay(request):
 def popular(request):
     return render(request, 'popular.html')
 
+def major(request):
+    return render(request, 'major.html')
+

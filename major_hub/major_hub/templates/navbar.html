@@ -60,23 +60,28 @@ body {
   .topnav input[type=text] {
     border: 1px solid #ccc;  
   }
+  
 }
 
 </style>
 
 <div class="topnav">
     {% url 'index' as index_url %}
-    <span>{% if request.path == index_url %}Home{% else %}<a href="{% url 'index' %}">Home</a>{% endif %}</span>
+    <span>{% if request.path == index %}Home{% else %}<a href="{% url 'index' %}">Home</a>{% endif %}</span>
 
-    {% url 'hpay' as about_url %}
-    <span>{% if request.path == hpay_url %}Home{% else %}<a href="{% url 'hpay' %}">Highest Paying</a>{% endif %}</span>
+    {% url 'hpay' as hpay_url %}
+    <span>{% if request.path == hpay %}Home{% else %}<a href="{% url 'hpay' %}">Highest Paying</a>{% endif %}</span>
 
-    {% url 'popular' as about_url %}
+    {% url 'popular' as popular_url %}
     <span>{% if request.path == popular %}Home{% else %}<a href="{% url 'popular' %}">Most Popular</a>{% endif %}</span>
 
     {% url 'contact' as ctool_url %}
-    <span ctool>{% if request.path == ctool_url %}Home{% else %}<a href="{% url 'ctool' %}">Comparison Tool</a>{% endif %}</span>
+    <span ctool>{% if request.path == ctool %}Home{% else %}<a href="{% url 'ctool' %}">Comparison Tool</a>{% endif %}</span>
 
-    <input type="text" placeholder="Search..">
+    {% url 'major' as major_url %}
+    <span ctool>{% if request.path == major %}Home{% else %}<a href="{% url 'major' %}">Major</a>{% endif %}</span>
+
+
+    <input type="text" id="search" placeholder="Search..">
 </div>
 

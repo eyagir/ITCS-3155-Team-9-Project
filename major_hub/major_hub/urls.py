@@ -24,5 +24,6 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('popular', views.popular, name="popular"),
     path('ctool', views.ctool, name="ctool"),
-    path('hpay', views.hpay, name="hpay")
+    path('hpay', views.hpay, name="hpay"),
+    path('major', views.major, name="major")
 ]
