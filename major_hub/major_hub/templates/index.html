@@ -2,62 +2,15 @@
 
 {% block title %}Major Hub{% endblock %}
 
-<style>
-    * {
-      box-sizing: border-box;
-    }
-    
-    body {
-      margin: 0;
-    }
-    
-
-    
-    /* Create three unequal columns that floats next to each other */
-    .column {
-      float: left;
-      padding: 10px;
-    }
-    
-    /* Left and right column */
-    .column.side {
-      width: 25%;
-    }
-    
-    /* Middle column */
-    .column.middle {
-      width: 75%;
-    }
-    
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    
-    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-      .column.side, .column.middle {
-        width: 100%;
-      }
-    }
-    
-
-</style>
-
-
 {% block content %}
 <div class="column side">
     <h2>Home</h2>
     <p>Welcome to Major Hub, a web application designed with the purpose of giving you the economic and workforce related information corresponding to the major(s) of interest to you. 
         For those without a major(s) already in mind, we offer a thorough list of majors that you can filter through that may pique your interest. </p>
-  </div>
+</div>
   
-  <div class="column middle">
+<div class="column middle">
     {% include "HomePageGraphs/MajorIndex.html" %}
-  </div>
-
 </div>
 
        

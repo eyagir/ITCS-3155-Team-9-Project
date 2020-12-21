@@ -3,15 +3,16 @@
 {% block title %}Major Hub{% endblock %}
 
 {% block content %}
-<h1>
-   Popular
-</h1>
-<div class="Most Popular">
+
+<div class="column side">
+    <h2>Popular</h2>
+    <p>This page displays a graph of the most popular majors in our dataset. The majors are lifted
+        from left to right based on how many recent graduates were observed graduating from the respective degree. </p>
+</div>
+  
+<div class="column middle">
     {% include "MostPopularGraphs/MostPopular.html" %}
 </div>
-<!-- <ul>
-    {% for row in list %}
-        <li>{{ row }}</li>
-    {% endfor %}
-</ul> -->
+
+
 {% endblock %}

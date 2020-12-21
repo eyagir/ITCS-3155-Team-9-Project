@@ -56,12 +56,12 @@
     
     /* Left and right column */
     .column.side {
-      width: 25%;
+      width: 20%;
     }
     
     /* Middle column */
     .column.middle {
-      width: 50%;
+      width: 80%;
     }
     
     /* Clear floats after the columns */
@@ -110,17 +110,12 @@
         
             {% url 'popular' as popular_url %}
             <span>{% if request.path == popular %}Home{% else %}<a href="{% url 'popular' %}">Most Popular</a>{% endif %}</span>
-        
-            {% url 'contact' as ctool_url %}
-            <span ctool>{% if request.path == ctool %}Home{% else %}<a href="{% url 'ctool' %}">Comparison Tool</a>{% endif %}</span>
-        
-            {% url 'major' as major_url %}
-            <span ctool>{% if request.path == major %}Home{% else %}<a href="{% url 'major' %}">Major</a>{% endif %}</span>
-        
 
+            {% url 'major' as major_url %}
+            <span ctool>{% if request.path == major %}Home{% else %}<a href="{% url 'major' %}">Select Major</a>{% endif %}</span>
+    
         </div>
-    <!-- {% include 'title.html' %}
-    {% include 'navbar.html'%} -->
+
         <div class="row">
             {% block content %}
             {% endblock %}

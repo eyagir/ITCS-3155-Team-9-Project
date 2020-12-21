@@ -3,12 +3,6 @@
 {% block title %}Major Hub{% endblock %}
 
 {% block content %}
-<h1>
-    Highest Pay
-</h1>
-<label for="pay">Graph by:</label>
-
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -26,26 +20,36 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- name="paydropdown" id="paydropdown" -->
-<div>
-    <select>
-        <option value="Median">Median</option>
-        <option value="25thPerecentile">25th Perecentile</option>
-        <option value="75thPerecentile">75th Perecentile</option>
-    </select>
+
+
+<div class="column side">
+    <h2>
+        Highest Pay
+    </h2>
+    <label for="pay">Graph by:</label>
+    <!-- name="paydropdown" id="paydropdown" -->
+    <div>
+        <select>
+            <option value="Median">Median</option>
+            <option value="25thPerecentile">25th Perecentile</option>
+            <option value="75thPerecentile">75th Perecentile</option>
+        </select>
+    </div>
 </div>
-<div class="Median graph">
-    {% include "HighestPayGraphs/HighestPayMedian.html" %}
+
+
+
+<div class="column middle">
+    <div class="Median graph">
+        {% include "HighestPayGraphs/HighestPayMedian.html" %}
+    </div>
+    <div class="25thPerecentile graph">
+        {% include "HighestPayGraphs/HighestPay25.html" %}
+    </div>
+    <div class="75thPerecentile graph">
+        {% include "HighestPayGraphs/HighestPay75.html" %}
+    </div>
 </div>
-<div class="25thPerecentile graph">
-    {% include "HighestPayGraphs/HighestPay25.html" %}
-</div>
-<div class="75thPerecentile graph">
-    {% include "HighestPayGraphs/HighestPay75.html" %}
-</div>
-<!-- <ul>
-    {% for row in list %}
-        <li>{{ row }}</li>
-    {% endfor %}
-</ul> -->
+
+
 {% endblock %}

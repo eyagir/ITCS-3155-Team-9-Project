@@ -4,15 +4,14 @@ majors = csv.op
 {% block title %}Major Hub{% endblock %}
 
 {% block content %}
-<h1>
-    Select Major
-</h1>
+<div class="column side">
+<h2> Select Major </h2>
 <label for="major">Select Major:</label>
 
 
 <!-- name="majordropdown" id="majordropdown" -->
 <div>
-<form action="major" method="post"> {% csrf_token %}
+<form name=majordropdownchange action="major" method="post"> {% csrf_token %}
     <select  name="majordropdown" id="majordropdown">
         <option value="ACCOUNTING">ACCOUNTING</option>
         <option value="ACTUARIAL SCIENCE">ACTUARIAL SCIENCE</option>
@@ -191,12 +190,10 @@ majors = csv.op
     <input type="submit" value="Select">
 </form>
 </div>
-<div>
+</div>
+
+<div class="column middle">
     {% include "SelectedMajorGraph/MajorInfoGraph.html" %}
 </div>
-<!-- <ul>
-    {% for row in list %}
-        <li>{{ row }}</li>
-    {% endfor %}
-</ul> -->
+
 {% endblock %}
