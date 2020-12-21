@@ -190,6 +190,19 @@ majors = csv.op
     <input type="submit" value="Select">
 </form>
 </div>
+    <p>
+        This is a page for you to choose majors and see economic/workforce data on them. Choose your perferred major and hit the sumbit button!
+    </p>
+    <h3>
+        <u>
+        Related Majors
+        </u>
+    </h3>
+    <ul>
+        {% for major in related_major %}
+          <li>{{major}}</li>
+        {% endfor %} 
+      </ul>
 </div>
 
 <div class="column middle">
