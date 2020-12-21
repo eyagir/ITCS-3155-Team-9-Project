@@ -21,7 +21,8 @@ def popular(request):
     return render(request, 'popular.html')
 
 def major(request):
-    major = request.POST['majordropdown']
+    major = request.POST.get('majordropdown', "ACCOUNTING")
+    print(major)
     major_change(major)
     return render(request, 'major.html')
 

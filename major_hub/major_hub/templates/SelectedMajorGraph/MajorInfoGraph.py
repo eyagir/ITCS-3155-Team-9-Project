@@ -15,6 +15,7 @@ def major_change(major):
     careerRank = rank.loc[career]
     careerIndex = careerRank - 1
 
+
     xLabels = ['Employed', 'Full Time', 'Part Time', 'Full Time (Year Round)', 'Unemployed']
 
     employed = np_df[careerIndex][9]
